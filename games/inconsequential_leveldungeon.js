@@ -1,6 +1,9 @@
 /*
 @title: inconsequential leveldungeon
+@description: Collect keys to unlock the portal and escape the randomly-generated dungeon. Don't fall into a trap. The cake is not a lie.
 @author: periwinkle
+@tags: ['adventure']
+@addedOn: 2022-11-06
 */
 const playerL = "l";
 const playerR = "r";

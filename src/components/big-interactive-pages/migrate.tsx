@@ -2,13 +2,13 @@ import styles from './migrate.module.css'
 import MainNavbar from '../navbar-main'
 import { useEffect } from 'preact/hooks'
 import { useSignal } from '@preact/signals'
-import { ExtractedMetadata, extractMetadata } from '../../lib/game-saving/extract-metadata'
+import { type ExtractedMetadata, extractMetadata } from '../../lib/game-saving/extract-metadata'
 import Button from '../design-system/button'
 import { IoArrowForward, IoCheckmark } from 'react-icons/io5'
 import Input from '../design-system/input'
 import { getPuzzleLabFromLocalStorage } from '../../lib/game-saving/legacy-migration'
-import { SessionInfo } from '../../lib/game-saving/account'
-import { isValidEmail } from '../../lib/game-saving/email'
+import type { SessionInfo } from '../../lib/game-saving/account-types'
+import { isValidEmail } from '../../lib/game-saving/account-types'
 
 interface LegacyGame {
 	name: string
@@ -167,7 +167,7 @@ export default function Migrate({ session, intitialEmail }: MigrateProps) {
 						.map((game) => ({ id: gameIds[game.name], legacy: game }))
 
 					localStorage.setItem('seenMigration', 'true')
-					
+
 					if (session?.session.full) {
 						window.location.replace('/~')
 					} else {

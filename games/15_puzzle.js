@@ -1,6 +1,9 @@
 /*
 @title: 15 puzzle
+@description: The "15 Puzzle" is a classic sliding puzzle game where the objective is to arrange numbered squares into sequential order, leaving one square empty. Players move tiles by sliding them into the empty space, trying to achieve the configuration shown in the instructions. It's a strategy and logic puzzle aimed at testing spatial reasoning and problem-solving skills.
 @author: maggie
+@tags: ["puzzle"]
+@addedOn: 2022-07-18
 
 INSTRUCTIONS:
 use WASD to move squares next to the empty square.
@@ -336,7 +339,7 @@ if (!solvable) {
 
 
 puzzle.push(16);
-console.log(puzzle)
+// console.log(puzzle)
 
 let puzzleIdx = 0;
 let mapStr = ""
@@ -347,7 +350,7 @@ for (let i = 0; i < 4; i++) {
   }
   mapStr += "\n";
 }
-console.log(mapStr);
+// console.log(mapStr);
 
 setMap(map`${mapStr}`);
 
@@ -398,8 +401,8 @@ afterInput(async () => {
       for (let x = 0; x < 4; x++) {
       const t = getTile(x, y);
       if (t.length && t[0].type != tiles[tileIdx]) {
-        console.log("got type", t[0].type)
-        console.log('expected', tiles[tileIdx])
+        // console.log("got type", t[0].type)
+        // console.log('expected', tiles[tileIdx])
         return
       }
       tileIdx++;

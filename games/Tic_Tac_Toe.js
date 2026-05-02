@@ -1,6 +1,9 @@
 /*
 @title: TicTacToe
+@description: A simple verision of the game tic-tac-toe! Play with a friend and try to place three of your shape in a row before your opponent does.
 @author: Northernside
+@tags: ['retro']
+@addedOn: 2023-02-02
 
 This isn't 100% made by me, as I heavily modified Atharv Gupta's code and fixed some bugs + improved the code.
 

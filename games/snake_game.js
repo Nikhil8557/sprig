@@ -1,6 +1,9 @@
 /*
 @title: snake_game
+@description: The game "snake_game" by souvikpal2000 is a retro-style classic Snake game where the player navigates a growing snake around the screen to collect food while avoiding collisions with walls and its own body.
 @author: souvikpal2000
+@tags: ['retro']
+@addedOn: 2022-09-13
 */
 
 /*
@@ -318,7 +321,7 @@ onInput("s", () => {
     keyPressed = "s";
   }
 });
-console.log(keyPressed);
+// console.log(keyPressed);
 
 const resetGame = () => {
   keyPressed = "";

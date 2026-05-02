@@ -1,6 +1,9 @@
 /*
 @title: cookie_clicker
+@description: "Cookie Clicker" by kunevi is an endless incremental game where the objective is to earn money by clicking a cookie. Players can enhance their earnings over time by purchasing upgrades that increase cookies per second and cookies per click.
 @author: kunevi
+@tags: ['endless']
+@addedOn: 2022-12-16
   _    _  ______          __  _______ ____    _____  _           __     __
  | |  | |/ __ \ \        / / |__   __/ __ \  |  __ \| |        /\\ \   / /
  | |__| | |  | \ \  /\  / /     | | | |  | | | |__) | |       /  \\ \_/ / 
@@ -392,7 +395,7 @@ onInput("i", () => {
   let price = calculatePrice(cpsOwned + 1,2)
   if(money >= price) {
     cpsOwned += 1;
-    console.log(price);
+    // console.log(price);
     money -= price;
     playTune(buy);
   }
@@ -402,7 +405,7 @@ onInput("k", () => {
   let price = calculatePrice(cpcOwned + 1,1)
   if(money >= price) {
     cpcOwned += 1;
-    console.log(price);
+    // console.log(price);
     money -= price;
     playTune(buy);
   }

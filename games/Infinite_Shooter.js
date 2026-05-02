@@ -1,6 +1,9 @@
 /*
 @title: Infinite Shooter
+@description: "Infinite Shooter" is an endless arcade-style game where players aim to shoot falling enemies for points. The enemies drop from the top, increasing in speed and frequency over time, and faster enemies yield more points when destroyed. The objective is to survive and achieve the highest score possible before the enemies reach the player's position.
 @author: not_a_robot
+@tags: ['endless']
+@addedOn: 2022-11-05
 
 Bad guys drop from the top, shoot them to get points. The faster they are, the
 more points you get!

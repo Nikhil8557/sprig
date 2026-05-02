@@ -1,6 +1,9 @@
 /*
 @title: sokoban
+@description: Sokoban is a classic puzzle game where the goal is to cover all green goal areas with purple boxes. Players must strategically push boxes around obstacles to achieve the objective and advance through increasingly challenging levels.
 @author: leo
+@tags: ['puzzle']
+@addedOn: 2022-07-18
 
 Instructions:
 

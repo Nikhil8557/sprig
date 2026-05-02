@@ -2,12 +2,13 @@ import styles from './bitmap-editor.module.css'
 import type { EditorProps } from '../../lib/state'
 import type { IconType } from 'react-icons'
 import { signal, useSignal, useSignalEffect } from '@preact/signals'
-import { palette, type PaletteItem, rgbaToHex, transparentBgUrl, transparent } from '../../lib/engine/1-base/palette'
-import { drawingTools, makeTempGrid, mirrorGrid, TempGrid, transformTools, Vector } from './bitmap-editor-tools'
+import { palette, type PaletteItem, rgbaToHex, transparent  } from '../../../engine/src/base'
+import { transparentBgUrl } from '../../lib/utils/transparent-bg'
+import { drawingTools, makeTempGrid, mirrorGrid, type TempGrid, transformTools, type Vector } from './bitmap-editor-tools'
 import { useEffect, useRef } from 'preact/hooks'
-import tinykeys from 'tinykeys'
+import { tinykeys } from 'tinykeys'
 import { IoArrowRedo, IoArrowUndo, IoImage, IoTrash } from 'react-icons/io5'
-import { leftDown, modIcon, rightDown } from '../../lib/utils/keyboard'
+import { leftDown, modIcon, rightDown } from '../../lib/utils/events'
 
 const makePixelGrid = (): PaletteItem[][] => new Array(16).fill(0).map(() => new Array(16).fill(transparent))
 const textToPixelGrid = (text: string): PaletteItem[][] => {
@@ -44,7 +45,7 @@ interface ToolButtonProps {
 
 function ToolButton(props: ToolButtonProps) {
 	const ref = useRef<HTMLButtonElement>(null)
-	
+
 	useEffect(() => {
 		return props.shortcut ? tinykeys(window, {
 			[props.shortcut]: (event: KeyboardEvent) => {
@@ -138,7 +139,7 @@ export default function BitmapEditor(props: EditorProps) {
 			editState.value = null
 		}
 
-		const keydown = (event: KeyboardEvent) => { liveMirror.value = event.altKey }
+    const keydown = (event: KeyboardEvent) => { liveMirror.value = event.altKey }
 		const keyup = (event: KeyboardEvent) => { liveMirror.value = event.altKey }
 
 		window.addEventListener('mouseup', mouseup)
@@ -226,7 +227,7 @@ export default function BitmapEditor(props: EditorProps) {
 							{row.map((item, x) => {
 								const mirroredTempGrid = editState.value && (liveMirror.value ? mirrorGrid(editState.value.tempGrid) : editState.value.tempGrid)
 								if (mirroredTempGrid?.[y]![x]) item = mirroredTempGrid[y]![x]!
-								
+
 								return (
 									<div
 										key={`${x},${y}`}

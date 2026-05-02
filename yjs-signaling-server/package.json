@@ -1,0 +1,16 @@
+{
+  "name": "y-webrtc-signaling-server",
+  "version": "10.3.0",
+  "description": "WebRTC signaling server for Yjs",
+  "type": "module",
+  "main": "bin/server.js",
+  "scripts": {
+    "start": "bun run bin/server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lib0": "^0.2.42",
+    "node-statsd": "^0.1.1",
+    "ws": "^8.14.2"
+  }
+}

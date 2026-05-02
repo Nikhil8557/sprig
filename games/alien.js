@@ -1,6 +1,9 @@
 /*
 @title: alien
+@description: "Alien" is game where players gain points by shooting aliens while avoiding asteroids. The game ends if the lazer hits an asteroid or when time runs out.
 @author: anshimathur0325
+@tags: ['endless']
+@addedOn: 2022-09-06
 Move the player with "a" and "d" for left and right
 Move the lazer up with "w"
 
@@ -10,6 +13,9 @@ If the lazer reaches the top without hitting an alien you lose one point.
 You gain a point when you hit an alien. 
 
 */
+
+
+
 //adds music if alien is hit and background music.
 const melody = tune `
 500,

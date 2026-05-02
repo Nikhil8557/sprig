@@ -1,6 +1,9 @@
 /*
 @title: RandomDungeon
+@description: "RandomDungeon" is an adventure game where players dig through walls to explore rooms, battle enemies, and collect treasure and weapons. The goal is to accumulate as much gold as possible before meeting their demise. With various weapons and enemy types, players navigate through procedurally generated dungeons to maximize their loot.
 @author: JonathanLevi
+@tags: ['adventure']
+@addedOn: 2023-02-20
 
 WASD to Move
 
@@ -16,7 +19,7 @@ function random(min, max) {
 }
 
 
-console.log("running")
+// console.log("running")
 
 class Weapon {
   constructor(name, range, damage) {
@@ -611,7 +614,7 @@ class Enemy {
             dungeon[y][x] = this.id
             this.x = x
             this.y = y
-            console.log(this.x, this.y)
+            // console.log(this.x, this.y)
             return
           }
         }
@@ -640,7 +643,7 @@ class Enemy {
     // attempt to move towards player
     var x = this.x.valueOf()
     var y = this.y.valueOf()
-    console.log("moving", x, y)
+    // console.log("moving", x, y)
     if (this.y > playery) {
       y--
     } else if (this.y < playery) {
@@ -748,9 +751,9 @@ function playerAttack() {
     }
   }
   if (hit){
-    console.log("hit enemy")
+    // console.log("hit enemy")
   } else {
-    console.log("could not target enemy")
+    // console.log("could not target enemy")
   }
 }
 

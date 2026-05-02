@@ -1,8 +1,10 @@
 import type { APIRoute } from 'astro'
-import { firestore, getSession, getUserByEmail, makeOrUpdateSession } from '../../../lib/game-saving/account'
+import { getSession, getUserByEmail, makeOrUpdateSession, findDocument, updateDocument } from '../../../lib/game-saving/account'
 import { isValidEmail } from '../../../lib/game-saving/email'
+import {DevEmail} from "../../../lib/game-saving/auth-helper";
+import { Timestamp } from 'firebase-admin/firestore';
 
-export const post: APIRoute = async ({ request, cookies }) => {
+export const POST: APIRoute = async ({ request, cookies }) => {
 	const session = await getSession(cookies)
 
 	let code: string
@@ -16,7 +18,7 @@ export const post: APIRoute = async ({ request, cookies }) => {
 
 		if (typeof body.code !== 'string') throw 'Missing/invalid code'
 		const trimmed = body.code.replace(/[^0-9]/g, '')
-		if (trimmed.length !== 6) throw 'Code must be 6 digits long'
+		if (trimmed.length !== 6 && email !== DevEmail) throw 'Code must be 6 digits long'
 		code = trimmed
 	} catch (error) {
 		return new Response(typeof error === 'string' ? error : 'Bad request body', { status: 400 })
@@ -24,17 +26,67 @@ export const post: APIRoute = async ({ request, cookies }) => {
 
 	const user = await getUserByEmail(email!) ?? session?.user
 	if (!user) return new Response('Invalid email or session', { status: 401 })
+ 
+	const now = Timestamp.now();
 
-	const _codes = await firestore.collection('loginCodes')
-		.where('code', '==', code)
-		.where('userId', '==',  user.id)
-		.limit(1).get()
-	if (_codes.empty) return new Response('Invalid login code', { status: 401 })
+	const failedLoginAttempts = user.failedLoginAttempts ?? 0;
+	const lockoutUntil = user.lockoutUntil ?? null;
 
-	await makeOrUpdateSession(cookies, user.id, 'code')
+	if (lockoutUntil && lockoutUntil.toMillis() > now.toMillis()) {
+		const lockoutMinutes = Math.ceil(
+			(lockoutUntil.toMillis() - now.toMillis()) / 60000
+		);
+		return new Response(
+			`Account locked. Try again in ${lockoutMinutes} minute(s).`,
+			{ status: 429 }
+		);
+	}
+
+	if (email === DevEmail && code == process.env.DEV_CODE) {
+		await makeOrUpdateSession(cookies, user.id, 'code')
+		return new Response(JSON.stringify({ user }), { status: 200 })
+	}
+
+	const _codes = await findDocument('loginCodes', [
+		['code', '==', code],
+		['userId', '==', user.id]
+	], 1);
+
+    if (_codes.empty) {
+		const newFailedAttempts = failedLoginAttempts + 1;
+
+		if (newFailedAttempts >= +(process.env.MAX_ATTEMPTS ?? '3')) {
+			const lockoutUntil = Timestamp.fromMillis(
+				now.toMillis() + parseInt(process.env.PUBLIC_LOCKOUT_DURATION_MS ?? process.env.LOCKOUT_DURATION_MS ?? '900000')
+			);
+			await updateDocument("users", user.id, {
+				failedLoginAttempts: newFailedAttempts,
+				lockoutUntil: lockoutUntil,
+			});
+			return new Response(
+				`Too many attempts. Account locked for ${
+					parseInt(process.env.LOCKOUT_DURATION_MS ?? '900000') / 60000
+				} minutes.`,
+				{ status: 429 }
+			);
+		} else {
+			await updateDocument("users", user.id, {
+				failedLoginAttempts: newFailedAttempts,
+			});
+			return new Response("Invalid login code", { status: 401 });
+		}
+	}
+
+	await updateDocument("users", user.id, {
+		failedLoginAttempts: 0,
+		lockoutUntil: null,
+	});
+
+	await makeOrUpdateSession(cookies, user.id, "code");
 	
-	const snap = await firestore.collection('loginCodes').where('userId', '==', user.id).get()
-	await Promise.all(snap.docs.map(doc => doc.ref.delete()))
+	const snap = await findDocument('loginCodes', ['userId', '==', user.id]);
+	// const snap = await firestore.collection('loginCodes').where('userId', '==', user.id).get()
+	await Promise.all(snap.docs.map((doc: any) => doc.ref.delete()))
 
 	return new Response(JSON.stringify({ user }), { status: 200 })
 }

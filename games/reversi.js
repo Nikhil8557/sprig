@@ -1,6 +1,9 @@
 /*
 @title: reversi
+@description: Reversi is a classic strategy board game for one or two players, featuring an 8x8 grid where players take turns placing discs to capture their opponent's pieces. The objective is to have the majority of your color discs on the board by the end of the game. This retro-style game offers a single-player mode against a bot or a two-player mode for a competitive experience.
 @author: veehj
+@tags: ['multiplayer','retro']
+@addedOn: 2022-09-13
 */
 
 const game = {
@@ -64,7 +67,7 @@ const game = {
 
   /** Play at (x,y) */
   play(x, y) {
-    console.log("play", x, y, this.player, this.getScore(x, y, this.player));
+    // console.log("play", x, y, this.player, this.getScore(x, y, this.player));
     if (this.getScore(x, y, this.player) === 0) return false;
     this.board[x][y] = this.player;
     this.score[this.player]++;
@@ -394,7 +397,7 @@ function startGame() {
 }
 
 async function gameOnKey(key) {
-  console.log(key);
+  // console.log(key);
   if (key == "w") {
     if (cursor.y > 0) cursor.y--;
   } else if (key == "s") {
@@ -418,7 +421,7 @@ async function gameOnKey(key) {
       }, 500);
     });
     if(game.player != 1){
-      console.log("bug");
+      // console.log("bug");
       break;
     }
     game.play(...game.bestMove());

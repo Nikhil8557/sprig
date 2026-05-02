@@ -1,4 +1,13 @@
-/*
+
+/* 
+@title: hidden_maze_escape
+@description: This game is the final game in my hidden maze trilogy, this game uses the same starting maps as the original, but you can see the walls, but if you complete those five only, you'll get the first ending. For the second ending, you have to find the secret in each map and complete each of their puzzles, then you get the second ending.
+@author: Rylan Berry
+@tags: ['puzzle']
+@addedOn: 2023-05-23
+*/
+
+    /*
               READ ME!
 yes, the marvelous sequel to the 1st and 2nd
 On the topic of the 1st and 2nd games, hidden maze and hidden maze infinite respectively you should play them before this one 
@@ -328,7 +337,7 @@ setPushables({
 
 afterInput(() => {
   if (level != levels.length -1 && areTouching(player, goal)) {
-    console.log("you die")
+    // console.log("you die")
     level += 1
     setMap(levels[level])
     if (level == levels.length-1){
@@ -344,7 +353,7 @@ afterInput(() => {
     setMap(hiddenLvls[level])
   }
   if (areTouching(block, blockGoal)){
-    console.log("here")
+    // console.log("here")
     level +=1
     hLvlsDone +=1
     setMap(levels[level])

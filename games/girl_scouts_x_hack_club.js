@@ -1,6 +1,9 @@
 /*
 @title: girl scouts x hack club
-@author: keira 
+@description: This game, "Girl Scouts x Hack Club," is about delivering Girl Scout cookies to Orpheus.
+@author: keira
+@tags: ['utility']
+@addedOn: 2023-03-13
 --horizon sprig workshop led by aileen & keira!--
 
 - hey scout! deliver the girl scout cookies to orpheus! :D

@@ -1,6 +1,9 @@
 /*
 @title: escape_room
-@author: Sampanna and Dhruv 
+@description: "Escape Room" is a puzzle game created by Sampanna and Dhruv where players navigate through increasingly complex levels. The goal is to reach the designated target in each level.
+@author: Sampanna and Dhruv
+@tags: ['puzzle']
+@addedOn: 2022-11-01
 
 */
 const wall = "w";

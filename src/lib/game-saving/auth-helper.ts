@@ -1,8 +1,5 @@
-import { Signal, useComputed, useSignal, useSignalEffect } from '@preact/signals'
-import { Game, SessionInfo } from './account'
-import { isValidEmail } from './email'
-import { codeMirror, PersistenceState } from '../state'
-import { executeCaptcha } from '../recaptcha'
+import { type Signal, useComputed, useSignal, useSignalEffect } from '@preact/signals'
+import { isValidEmail } from './account-types'
 
 export type AuthState =
 	| 'IDLE'
@@ -12,9 +9,12 @@ export type AuthState =
 	| 'CODE_SENT'
 	| 'CODE_CHECKING'
 	| 'CODE_INCORRECT'
+	| 'ACCOUNT_LOCKED'
 	| 'LOGGED_IN'
 
 export type AuthStage = 'IDLE' | 'EMAIL' | 'CODE' | 'LOGGED_IN'
+
+export const DevEmail = "development@hackclub.com"
 	
 export const useAuthHelper = (initialState: AuthState = 'IDLE', initialEmail: string = '') => {
 	const state = useSignal(initialState)
@@ -31,7 +31,7 @@ export const useAuthHelper = (initialState: AuthState = 'IDLE', initialEmail: st
 	const emailValid = useComputed(() => isValidEmail(email.value))
 
 	const code = useSignal('')
-	const codeValid = useComputed(() => code.value.length === 6)
+	const codeValid = useComputed(() => code.value.length === 6 || email.value === DevEmail)
 	useSignalEffect(() => { code.value = code.value.replace(/[^0-9]/g, '') })
 
 	const startEmailEntry = () => { state.value = 'EMAIL_ENTRY' }
@@ -64,6 +64,9 @@ export const useAuthHelper = (initialState: AuthState = 'IDLE', initialEmail: st
 		})
 		if (res.ok) {
 			state.value = 'LOGGED_IN'
+		} else if (res.status === 429) {
+			state.value = 'ACCOUNT_LOCKED'
+			console.error('Account locked due to too many failed attempts.')
 		} else {
 			state.value = 'CODE_INCORRECT'
 			console.error(await res.text())
@@ -96,52 +99,5 @@ export const useAuthHelper = (initialState: AuthState = 'IDLE', initialEmail: st
 		submitCode,
 		sendCodeOverride,
 		wrongEmail
-	}
-}
-
-export const persist = async (persistenceState: Signal<PersistenceState>, email?: string) => {
-	const isShared = persistenceState.value.kind === 'SHARED'
-	const gameName: string | undefined = persistenceState.value.kind === 'SHARED' ? persistenceState.value.name : undefined
-	persistenceState.value = {
-		kind: 'PERSISTED',
-		cloudSaveState: 'SAVING',
-		game: 'LOADING',
-		stale: persistenceState.value.stale,
-		session: persistenceState.value.session
-	}
-
-	try {
-		const recaptchaToken = await executeCaptcha('PERSIST_GAME')
-
-		const res = await fetch('/api/games/new', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-				partialSessionEmail: email,
-				code: codeMirror.value?.state.doc.toString() ?? '',
-				name: gameName,
-				recaptchaToken
-			})
-		})
-		if (!res.ok) throw new Error(await res.text())
-		const { game, sessionInfo } = await res.json() as { game: Game, sessionInfo: SessionInfo }
-		if (!isShared) document.cookie = `sprigTempGame=${game.id};path=/;max-age=${60 * 60 * 24 * 365}`
-
-		if (persistenceState.value.kind === 'PERSISTED')
-			persistenceState.value = {
-				...persistenceState.value,
-				cloudSaveState: 'SAVED',
-				game,
-				session: sessionInfo
-			}
-		
-		window.history.replaceState(null, '', `/~/${game.id}`)
-	} catch (error) {
-		console.error(error)
-		if (persistenceState.value.kind === 'PERSISTED')
-			persistenceState.value = {
-				...persistenceState.value,
-				cloudSaveState: 'ERROR'
-			}
 	}
 }

@@ -1,6 +1,9 @@
 /*
 @title: Maze
+@description: "Maze" is a puzzle game where the objective is to guide your character through each level to reach the green teleporter and advance to the next stage.
 @author: Akeell
+@tags: ['puzzle']
+@addedOn: 2022-10-06
 */
 
 /*instructions

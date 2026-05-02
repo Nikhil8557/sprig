@@ -1,6 +1,9 @@
 /*
 @title: mathematical_meteorite
+@description: "Mathematical Meteorite" is a puzzle game where you guide a falling meteorite towards the correct campfire by quickly solving a mathematical equation. Each campfire presents a potential answer to the equation, and selecting the right one can save the world from the meteorite.
 @author: Arash
+@tags: ['puzzle']
+@addedOn: 2023-02-23
 
 There's a special meteorite falling that only seems to care about 
 special mathematical campfires! Guide the meteorite to the right 

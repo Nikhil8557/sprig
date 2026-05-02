@@ -1,6 +1,9 @@
 /*
 @title: spriggymon
+@description: Proudly inspired by the genre-defining ludonarrative experience, Pokemon, spriggymon is a fully-featured JRPG with ZERO bugs or confusing narratives.
 @author: spriglover69
+@tags: []
+@addedOn: 2022-11-15
 
 full source: https://github.com/spriglover69/spriggymon
 */

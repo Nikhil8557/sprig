@@ -1,6 +1,9 @@
 /*
 @title: Infinite Maze
+@description: Infinite Maze is an endlessly generated maze game where players navigate through randomly created labyrinths.
 @author: pertark
+@tags: ['endless']
+@addedOn: 2022-09-22
 */
 
 //INCLUDE
@@ -180,15 +183,15 @@ function generateEmptyMaze(wi, hi) {
   let blank = blanks.split("");
   let rows = "w.".repeat(wi) + "w";
   let row = rows.split("");
-  console.log("blank", blank);
-  console.log("row", row);
+  // console.log("blank", blank);
+  // console.log("row", row);
   let maze = [];
   for (let i=0; i<hi; i++) {
     maze.push([...blank]);
     maze.push([...row]);
   }
   maze.push([...blank]);
-  console.log("empty maze:", maze)
+  // console.log("empty maze:", maze)
   return maze;
 }
 
@@ -248,7 +251,7 @@ afterInput(() => {
   if (tilesWith(player, goal).length) {
     mapa = mazeGeneration(4+score, 4+score);
     score += 1;
-    console.log(mapa);
+    // console.log(mapa);
     setMap(mapa);
     clearText();
     addText("Score: " + score, {

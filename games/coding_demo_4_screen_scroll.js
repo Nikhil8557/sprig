@@ -1,6 +1,9 @@
 /*
 @title: Coding Demo 4 - Screen Scrolling
+@description: This game, created by Leonard (Omay), is a demonstration of screen scrolling mechanics using a map that stores and displays a dynamic view of the level. It features a player navigating through a maze-like environment with the ability to scroll across a larger map. The primary focus is on showcasing how to copy, store, and display portions of a map efficiently.
 @author: Leonard (Omay)
+@tags: []
+@addedOn: 2022-11-7
 
 MapV2 is a version of a map I made that can store any map. It is helpful for copying the current state of the map.
 Between every "INCLUDE" and "END INCLUDE" is what you need to copy

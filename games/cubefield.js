@@ -1,6 +1,9 @@
 /*
 @title: cubefield
+@description: "Cabefield" is an endless dodging game inspired by the TI calculator game, where the player navigates through a field to avoid colliding with cubes. As the player's score increases, more cubes appear, moving at a faster rate, with level progression indicated by the cubes' color. The game ends when the player hits a cube.
 @author: jai
+@tags: ['endless']
+@addedOn: 2023-01-10
 */
 
 // A + D to move. Dodge the cubes :)
@@ -252,12 +255,12 @@ function tick() {
     return;
   }
 
-  console.log(getAll());
+  // console.log(getAll());
   
   for (let currentEnemy of getAll()) {
     if (isNaN(currentEnemy._type)) continue;
     
-    console.log(currentEnemy);
+    // console.log(currentEnemy);
     
     if ((currentEnemy.y + 1) === height()) {
       clearTile(currentEnemy.x, currentEnemy.y);

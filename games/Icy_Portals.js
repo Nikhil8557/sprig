@@ -1,6 +1,9 @@
 /*
 @title: Icy Portals
+@description: "Icy Portals" is a puzzle game created by Jonathan La, where players navigate through icy mazes using a limited number of moves. The objective is to reach the goal by solving challenges involving walls, teleporters, and buttons across multiple levels. The game tests strategic thinking as players maneuver through obstacles and utilize teleportation to progress.
 @author: Jonathan La
+@tags: ['puzzle']
+@addedOn: 2022-12-02
 */
 
 let moves = 20;

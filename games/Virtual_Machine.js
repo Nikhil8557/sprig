@@ -1,6 +1,9 @@
 /*
 @title: Virtual_Machine
+@description: Virtual Machine is a game where you can navigate different pages of a virtual machine. It's just designed to be fun - no worries about trying to improve your score!
 @author: N_Rizwan
+@tags: ["strategy" , "maze"]
+@addedOn: 2022-09-08
 */
 
 //===================VARIABLES=====================    
@@ -423,7 +426,7 @@ afterInput(() => {
   if (check2 > 0) {
     level = 2
 
-    console.log("Load trash");
+    // console.log("Load trash");
     
     const currentLevel = levels[level];
     if (currentLevel !== "") {

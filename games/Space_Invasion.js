@@ -1,6 +1,9 @@
 /*
 @title: Space Invasion
+@description: "Space Invasion" is an endless arcade-style game where players fight off a continual wave of enemy space crafts. The main goal is to survive as long as possible, increasing your score by successfully shooting down enemies.
 @author: Agent-Shu
+@tags: ['endless']
+@addedOn: 2022-10-18
 */
 
 /*
@@ -480,7 +483,7 @@ const collision = () =>{
       if(getAll(eship)[0].y == getAll(laser)[0].y){
 
         score += 1
-        console.log("boom")
+        // console.log("boom")
         playTune(boom)
 
         clearInterval(y_laser)

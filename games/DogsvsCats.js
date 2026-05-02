@@ -1,6 +1,9 @@
 /*
 @title: Dogs vs Cats
+@description: "Dogs vs Cats" is an endless game where the player controls a dog that must dodge incoming cats. The objective is to avoid collisions with the cats as they move across the screen. It offers a simple yet challenging experience.
 @author: Theodor
+@tags: ['endless']
+@addedOn: 2022-11-12
 */
 const melody = tune `
 500: f4^500 + g5~500,
@@ -135,9 +138,11 @@ p......
 
 setMap(levels[level]);
 
+/* TEST FAILED - Error: Your sprite name must be wrapped in [] brackets here.
 setPushables({
   [ dog ]: [],
 });
+*/
 
 afterInput(() => {
   if (dog()) {

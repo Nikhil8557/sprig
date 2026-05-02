@@ -1,6 +1,9 @@
 /*
 @title: santas_workshop
+@description: Santas_workshop is a game where you help Santa deliver presents as an elf by pushing presents into chutes.
 @author: ava_sadasivan
+@tags: ['puzzle']
+@addedOn: 2023-03-10
 */
 
 const elf = "p";

@@ -1,6 +1,9 @@
 /*
 @title: 2D Life
+@description: 2D Life is a sandbox simulation game with a retro aesthetic where players can manipulate and observe cellular automata based on customizable rules. Inspired by Conway's Game of Life, the game allows players to create patterns and control their evolution on a grid, experimenting with the conditions for life and survival. 
 @author: Leonard (Omay)
+@tags: ['sandbox','simulation','retro']
+@addedOn: 2022-09-25
 
 Use "WASD" to move the selector.
 Use "I" to toggle the cell that the selector is at.

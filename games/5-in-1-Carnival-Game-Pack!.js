@@ -1,6 +1,9 @@
 /*
 @title: 5-in-1 Carnival Game Pack!
+@description: 5-in-1 Carnival Game Pack by Ada Dyer is a collection of mini-games set in a carnival atmosphere, where players can explore various game areas. The game includes diverse activities such as racing, maze navigation, and zombie shooting. Hidden surprises like easter eggs add an extra layer of exploration and fun.
 @author: Ada Dyer
+@tags: []
+@addedOn: 2023-01-07
 
 This game was made so you wouldn't have to upload something to your Sprig every time you want to play something different - but sadly, the Sprig doesn't take files this large. :'(
 
@@ -127,7 +130,7 @@ class WhackOrpheus {
       o.y = Math.floor(Math.random() * 3)
       
       if (i[0]) {
-        console.log(i)
+        // console.log(i)
         if (i[0]._type == "s") {
           addText("You caught him!", {color: color`H`})
           setTimeout(()=> {
@@ -178,7 +181,7 @@ class Piano {
     let s = getFirst(selector2)
     let i = getTile(s.x, s.y)
 
-    console.log(i)
+    // console.log(i)
     
     if (i[0]._type == "3") {
         playTune(a)
@@ -979,9 +982,9 @@ p..........
 
 setMap(levels[level]);
 
-console.log("hoi1")
+// console.log("hoi1")
 if (game == "none") {
-  console.log("menu setup")
+  // console.log("menu setup")
   setBackground(bg);
   mapNat = getMapV2();
   setMapV2(trimMapV2(px-5, py-4, 10, 8, mapNat));

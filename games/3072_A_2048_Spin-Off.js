@@ -1,6 +1,9 @@
 /*
 @title: 3072: A 2048 Spin-Off
+@description: "3072: A 2048 Spin-Off" is a strategic puzzle game where players combine numbered tiles to reach the target number 3072. Building upon the mechanics of the classic 2048 game, it offers a fresh challenge with intuitive gameplay and enhanced features. The goal is to merge tiles to get higher sums and ultimately achieve the winning tile.
 @author: sahitid
+@tags: ['strategy']
+@addedOn: 2022-10-14
 
 Why play 2048 when it's the same basic game you've been playing for years?
 Why don't you move on to a better version? A more intuitive version?

@@ -1,6 +1,9 @@
 /*
 @title: Bottom_of_the_Barrel
+@description: Bottom_of_the_Barrel is a strategy RPG game where players engage in battles using a traditional turn-based combat system. The objective is to fight enemies and ascend through various levels within a metaphorical "barrel." Players navigate through the game world and improve their character by leveling up after gaining experience from victorious battles.
 @author: Ozfolo
+@tags: ['strategy']
+@addedOn: 2022-12-01
 */
 /*
 Controls: A and D for moving in game, WASD for navigating menus, J for select, 

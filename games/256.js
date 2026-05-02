@@ -1,6 +1,9 @@
 /*
 @title: 256
+@description: "256" is a retro-themed puzzle game where players combine numbered tiles on a grid to increase their score, aiming to reach the 256 tile to win. Inspired by classic tile-merging mechanics, the game ends when there are no more moves available. The simplistic design and strategic gameplay offer a nostalgic experience.
 @author: jzhao
+@tags: ['retro']
+@addedOn: 2022-08-22
 */
 
 const b2 = "1";
@@ -245,7 +248,7 @@ function moveAll(dx, dy) {
       blocks.forEach(block => getAll(block).forEach(sprite => {
         // check if neighbour is of same type
         const neighbourTiles = getTile(sprite.x + dx, sprite.y + dy).map(t => t.type);
-        console.log(neighbourTiles);
+        // console.log(neighbourTiles);
         if (neighbourTiles.includes(block) || neighbourTiles.length === 0) {
           sprite.x += dx;
           sprite.y += dy;

@@ -1,6 +1,9 @@
 /*
 @title: Snake
+@description: A version of the classic snake game! Eat the chicken wings to make your snake longer, and try to avoid hitting yourself or the walls!
 @author: Boyne
+@tags: ["endless" , "retro" , "strategy"]
+@addedOn: 2022-11-10
 */
 
 const logo1 = "1";
@@ -288,7 +291,7 @@ function move() {
   }
   
   if (tilesWith(player, food).length != 0 || tilesWith(body, food).length != 0) {
-    console.log(tilesWith(player).length);
+    // console.log(tilesWith(player).length);
     placeFood();
     score += 1;
     clearTile(getFirst(food).x, getFirst(food).y);

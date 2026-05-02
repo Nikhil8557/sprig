@@ -1,6 +1,9 @@
 /*
 @title: rescue_leo
+@description: "Rescue Leo" is a puzzle game designed to raise awareness about sea turtles and pollution. Players guide Leo, the sea turtle, to reach a goal tile while avoiding harmful trash like plastic bottles and soda cans.
 @author: agentblack_6000
+@tags: ['puzzle']
+@addedOn: 2023-02-11
 
 
 A game to spread awarness about sea turtles, perhaps switch to reusable

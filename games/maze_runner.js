@@ -1,6 +1,9 @@
 /*
 @title: maze runner
+@description: Maze Runner is a game wher you navigate through mazes filled with spikes, keys, and locks. Try not to hit the spikes because they send you back to the beginning of the game!
 @author: wetf
+@tags: ['puzzle']
+@addedOn: 2022-09-26
 */
 
 const player = "p";

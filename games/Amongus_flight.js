@@ -1,6 +1,9 @@
 /*
 @title: Amongus flight
+@description: "Amongus Flight" is an endless game where players navigate a character through a series of moving obstacles. The goal is to maneuver through openings in the blockers without colliding, collecting points as the game progresses. The game continues until the player hits an obstacle.
 @author: Yashas
+@tags: ['endless']
+@addedOn: 2023-01-04
 */
 
 const amongus = "p";
@@ -132,7 +135,7 @@ getAll(blocker).forEach((w) => {
 
 function lost() {
   death = true;
-  console.log("You lost");
+  // console.log("You lost");
   setMap(map`
 ........
 ........

@@ -1,6 +1,9 @@
 /*
 @title: racer
+@description: "Racer" is a classic puzzle game port where players switch lanes to avoid obstacles and reach the goal.
 @author: Snow
+@tags: ['puzzle']
+@addedOn: 2022-11-08
 */
 
 // WHEN ON LEVEL SELECT SCREEN: To move to next level, click L. To move to previous level, click J. To select, click I.
@@ -297,13 +300,13 @@ setInterval(() => {
 let lastTime = Date.now()
 
 setInterval(() => {
-  console.log(lastTime)
+  // console.log(lastTime)
   if (!hasLost && raceStarted <= -1 && Date.now() - lastTime >= levelSpeeds[level] && level > 1) {
     
   getFirst(player).y -= 1;
     checkWin()
     lastTime = Date.now()
-    console.log("inside", lastTime)
+    // console.log("inside", lastTime)
     
   }
 }, 100)

@@ -1,6 +1,9 @@
 /*
 @title: Bert Blaster
+@description: "Bert Blaster" is an endless game where you control a character that jumps and shoots obstacles to gain points. The game features a moving landscape and dynamic enemy obstacles that you must avoid or shoot to continue progressing. The emphasis is on achieving a high score by surviving as long as possible.
 @author: Waterbyte
+@tags: ['endless']
+@addedOn: 2022-11-05
 */
 
 const grass1 = "a";
@@ -344,7 +347,7 @@ addSprite(6, 6, obstacle);
 
 
 function stop() {
-  console.log('game stopped');
+  // console.log('game stopped');
   running = false;
   intervals.forEach((interval) => clearInterval(interval));
 }
@@ -397,7 +400,7 @@ function setupGamescoreInterval(){
   const interval = setInterval(()=> {
     
     gameScore*= gameScoreMultipliciator;
-    console.log(gameScore.toFixed(0));
+    // console.log(gameScore.toFixed(0));
     
     
   },500);
@@ -422,7 +425,7 @@ if(getFirst(obstacle)!=undefined){
     getFirst(obstacle).x -= 1;
 }
 
-console.log("running");
+// console.log("running");
 
 
 

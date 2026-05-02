@@ -1,6 +1,9 @@
 /*
 @title: mini_maze_and_puzzle
+@description: "Mini Maze and Puzzle" is a strategy game where the objective is to find the door while navigating through traps and lava. Players must also move blocks to their designated 'medium' to advance levels.
 @author: muhammad tsaqif mukhayyar
+@tags: ['strategy']
+@addedOn: 2022-09-16
 
 Instructions:
 
@@ -597,7 +600,7 @@ onInput("j", () => {
 
 onInput("k", () => {
   const currentLevel = levels[0];
-  console.log(levels[level]);
+  // console.log(levels[level]);
   if (currentLevel !== undefined) {
     clearText("");
     setMap(currentLevel);
@@ -636,7 +639,7 @@ afterInput(() => {
   } else {
     const currentLevelCheck = levels[level];
     if(currentLevelCheck == levels[5]){
-      console.log("test")
+      // console.log("test")
       addSprite(uBarrierX, uBarrierY, barrier);
       button_status="unpressed";
     }

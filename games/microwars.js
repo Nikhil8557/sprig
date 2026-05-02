@@ -1,6 +1,9 @@
 /*
 @title: microwars
+@description: "Microwars" is a multiplayer game that pits Arduino against Raspberry Pi in a playful battle of electronics. Players choose a side and attempt to outmaneuver and shoot down their opponent with projectiles, aiming to hit the opposing device three times to win.
 @author: Bedo
+@tags: ['multiplayer']
+@addedOn: 2023-02-19
 */
 
 const rasp = "r"

@@ -1,4 +1,13 @@
 
+/* 
+@title: rickroll
+@description: The "never gonna give you up" music video, but low quality and on Sprig.
+@author: Tiger-The-Cat
+@tags: []
+@addedOn: 2023-03-25
+*/
+
+    
 // set all of the colors
 setLegend(
   [ '0', bitmap`

@@ -1,7 +1,10 @@
 /*
-
 @title: Missile Mania
+@description: Missile Mania is an endless survival game where the player must evade missiles falling from the sky. If a missile collides with the player, the game ends. The objective is to navigate left and right to avoid these obstacles for as long as possible.
 @author: Nisarga (https://github.com/nisarga-developer)
+@tags: ['endless']
+@addedOn: 2023-01-01
+
 
 Instructions:
 Hit "run" to execute the code and

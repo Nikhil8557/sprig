@@ -1,6 +1,9 @@
 /*
 @title: Art
+@description: "Art" is a sandbox game by Leonard (Omay) where players can create pixel art by selecting and applying colors on a grid. Players can move a cursor around the grid to draw, switch colors, and reset their artwork. The game takes inspiration from a similar painting game and emphasizes creative expression within defined boundaries.
 @author: Leonard (Omay)
+@tags: ['sandbox']
+@addedOn: 2022-11-06
 
 Inspired by this game: https://editor.sprig.hackclub.com/?file=https://raw.githubusercontent.com/hackclub/sprig/main/games/Paint_IT.js
 Border is the color you have selected.

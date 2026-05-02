@@ -1,4 +1,13 @@
-/*
+
+/* 
+@title: Meteor_Dodge
+@description: Meteor Dodge is an endless game where players control a green alien to dodge incoming meteors. The objective is to move the alien away from the meteors using WASD controls to avoid collisions. It's the creator's first game developed in JavaScript.
+@author: Kritav
+@tags: ['endless']
+@addedOn: 2023-04-27
+*/
+
+    /*
 * Meteor Dodge
 * wasd to move
 * don't hit the meteors

@@ -1,6 +1,9 @@
 /*
 @title: Super Maze
+@description: "Super Maze" is a strategy game where players navigate through increasingly difficult mazes to reach the goal. Each of the 6 levels introduces new tile types and challenges, such as impassable walls, directional tiles that restrict movement, lava that resets progress, and teleporters for quick travel. Players are encouraged to solve each maze by understanding and leveraging the unique properties of special tiles.
 @author: the_knights_of_rohan
+@tags: ['strategy']
+@addedOn: 2023-02-08
 
 Use wasd to move and get to the present. Try to figure out what the special tiles do!
 Directional tiles taken from Leonard's Coding Demo 3.

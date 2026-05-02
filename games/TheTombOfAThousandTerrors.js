@@ -1,6 +1,9 @@
 /*
 @title: The Tomb of a Thousand (T)errors
+@description: "The Tomb of a Thousand (T)errors" is a puzzle game where players must navigate through increasingly complex, randomly generated labyrinths. The objective is to collect keys to open passages and gather diamonds while progressing through the levels.
 @author: Fabian
+@tags: ['puzzle']
+@addedOn: 2022-09-13
 */
 
 const splash = "s";
@@ -344,7 +347,7 @@ function startLevel() {
 
   levelState.mapSizeX = def.size[0];
   levelState.mapSizeY = def.size[1];
-  levelState.map = getGrid(levelState.mapSizeX, levelState.mapSizeY);
+  levelState.map = getGridFunction(levelState.mapSizeX, levelState.mapSizeY);
   levelState.map = generatePrimMaze(levelState.map);
 
   let objects = [];
@@ -565,7 +568,7 @@ function setTile(x,y, tile) {
 }
 
 // Maze generation
-function getGrid(width, height) {
+function getGridFunction(width, height) {
     var grid = [];
 
     for (let y = 0; y < height; y++) {

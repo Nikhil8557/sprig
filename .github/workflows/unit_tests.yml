@@ -1,0 +1,30 @@
+name: Unit Tests
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  PUBLIC_MAX_LOOP_TIME_MS: 1500
+  PUBLIC_MAX_ITERATIONS: 2000
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Execute Unit tests
+        run: |
+          bun install --frozen-lockfile
+          bun run test:unit

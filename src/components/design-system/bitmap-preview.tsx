@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'preact/hooks'
-import { bitmapTextToImageData } from '../../lib/engine/2-web/bitmap'
+import { bitmapTextToImageData } from '../../../engine/src/image-data'
 import styles from './bitmap-preview.module.css'
 
 interface BitmapPreviewProps {
@@ -14,7 +14,7 @@ export default function BitmapPreview(props: BitmapPreviewProps) {
 		const ctx = canvas.current.getContext('2d')!
 		ctx.imageSmoothingEnabled = false
 		try {
-			const data = bitmapTextToImageData(props.text)
+			const data = bitmapTextToImageData('.', props.text)
 			canvas.current.width = data.width
 			canvas.current.height = data.height
 			ctx.clearRect(0, 0, data.width, data.height)

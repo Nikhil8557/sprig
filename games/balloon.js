@@ -1,6 +1,9 @@
 /*
 @title: balloon
+@description: "Balloon" is a simple maze game where you navigate a balloon through various levels, pushing other balloons out of the way to reach the goal.
 @author: Lucas
+@tags: []
+@addedOn: 2022-09-08
 */
 
 const player = "p";

@@ -1,4 +1,13 @@
-/*
+
+/* 
+@title: fill_the_map
+@description: "Fill the Map" is a strategy game where the objective is to cover all the tiles on the map without overlapping or retracing your steps.
+@author: Ansh Kumar
+@tags: ['strategy']
+@addedOn: 2023-03-14
+*/
+
+    /*
 title: fill the map!
 author: Ansh Kumar
 
@@ -68,7 +77,7 @@ setLegend(
 0000000000000000
 0000000000000000
 0000000000000000
- `]
+ `],
 )
 
 setSolids([player, green, wall])
@@ -97,7 +106,19 @@ pw...
 .w...
 .w...
 .....`,
-]
+  map`
+pwwwwwwwwwwwwwwwww..
+.w.................
+.w.wwwwwwwwwwww.....
+.w.................
+.wwwwwwwwwwwwwwwwww.
+....w....w..w......
+..w.w.......w..w...
+..w.w.www.w.w..w...
+..w.w.wwwww.w..w...
+..w...wwwww....w....`,
+];
+
 
 
 setMap(levels[level])

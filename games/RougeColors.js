@@ -1,4 +1,13 @@
-/*
+
+/* 
+@title: RougeColors
+@description: RougeColors is a strategy game created by KingstimusPrime, where the objective is to defeat all enemies by colliding with them when they match your color. The player changes color by walking over colored tiles, enabling them to engage with enemies of the same color. The game involves tactical movement and color-matching to conquer the foes across different levels.
+@author: KingstimusPrime
+@tags: ['strategy']
+@addedOn: 2023-04-19
+*/
+
+    /*
 KingstimusPrime
 
 The goal of the game is to defeat all of the enemies by walking into them with the same color.

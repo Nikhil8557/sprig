@@ -1,6 +1,6 @@
-import { Signal, useComputed, useSignal } from '@preact/signals'
-import { persist } from '../../lib/game-saving/auth-helper'
-import { isValidEmail } from '../../lib/game-saving/email'
+import { type Signal, useComputed, useSignal } from '@preact/signals'
+import { persist } from '../../lib/game-saving/persist'
+import { isValidEmail } from '../../lib/game-saving/account-types'
 import { usePopupCloseClick } from '../../lib/utils/popup-close-click'
 import type { PersistenceState } from '../../lib/state'
 import Button from '../design-system/button'
@@ -12,7 +12,7 @@ interface SavePromptProps {
 	persistenceState: Signal<PersistenceState>
 	onClose: () => void
 }
-	
+
 export default function SavePrompt(props: SavePromptProps) {
 	const email = useSignal(props.persistenceState.value.session?.user.email ?? '')
 	const emailValid = useComputed(() => isValidEmail(email.value))
@@ -54,7 +54,7 @@ export default function SavePrompt(props: SavePromptProps) {
 			<Button accent onClick={() => props.onClose()}>Done</Button>
 		</>)
 	}
-	
+
 	return (
 		<div class={popupStyles.popup}>
 			{content}

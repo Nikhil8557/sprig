@@ -1,4 +1,13 @@
-var Previous = 1;
+
+/* 
+@title: Among_The_Stars
+@description: "Among_The_Stars" is an endless game where players navigate a universe filled with deceptively dangerous stars. As players explore the shimmering lights, they must uncover hidden secrets while battling against the blinding lights that challenge their progress. The game presents a captivating journey where players must fight to survive amid increasingly sinister celestial bodies.
+@author: VanGo
+@tags: ['endless']
+@addedOn: 2023-04-11
+*/
+
+    var Previous = 1;
 var Player = 1;
 var PlayerMoveSpeed = 3;
 var PlayerX = 40;
@@ -301,7 +310,7 @@ setPushables({
             addSprite(PlayerX + 1, PlayerY, FlyLazerRight);
             break;
           default:
-            console.log("I don't know what fruit that is.");
+            // console.log("I don't know what fruit that is.");
         }
       }
     }

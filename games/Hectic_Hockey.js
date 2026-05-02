@@ -1,6 +1,9 @@
 /*
 @title: Hectic Hockey
+@description: Hectic Hockey is an action game where players navigate a hockey player across the rink, avoiding collisions with enemy players. Inspired by Frogger, the goal is to reach the opposite side of the map without getting hit, resetting your progress if you collide. The game challenges players to time their movements carefully to increase their score.
 @author: Colton
+@tags: ['action']
+@addedOn: 2022-10-12
 
 Instructions:
 WASD to control your player

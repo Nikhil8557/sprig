@@ -1,6 +1,9 @@
 /*
 @title: puzzle_runner
+@description: Puzzle Runner is a puzzle game where you navigate through mazes while pushing a box to reach the goal.
 @author: Shanath
+@tags: ['puzzle']
+@addedOn: 2022-10-12
 
 In Puzzle Runner, you must navigate through the maze while 
 pushing a box. If you get through all the levels, you win! 

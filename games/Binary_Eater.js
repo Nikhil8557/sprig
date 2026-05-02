@@ -1,6 +1,9 @@
 /*
 @title:  Binary Eater
+@description: Binary Eater is a puzzle game where players input custom binary commands using (W, A, S, D) to type characters before a binary-eater consumes them. Inspired by the game Trash Guy, the objective is to quickly and correctly type characters based on binary codes representing the alphabet and increase the score. The challenge lies in maintaining accuracy and speed to avoid the game ending when inputting incorrect values or being outpaced by the eater.
 @author: Kumaraswamy
+@tags: ['puzzle']
+@addedOn: 2023-03-10
 
 Inspired from: https://zac.cy/trashguy/
 
@@ -272,7 +275,7 @@ function generateBinaryMap() {
 
 
 let binaryMap = generateBinaryMap();
-console.log(binaryMap);
+// console.log(binaryMap);
 
 onInput("w", () => { code(0);  });
 onInput("a", () => { code(1);  });
@@ -299,7 +302,7 @@ function restart_game() {
 
 // l is also used to reset
 onInput("l", () => {
-    console.log("yep");
+    // console.log("yep");
     if (!game_running) {
         restart_game();
         return;
@@ -333,7 +336,7 @@ function code(digit) {
 
         return;
     }
-    console.log("Binary value: " + ch);
+    // console.log("Binary value: " + ch);
 
     letters += ch;
     bin = "";

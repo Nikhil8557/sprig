@@ -1,6 +1,9 @@
 /*
 @title: ValentinesGame
+@description: ValentinesGame is a cooperative two-player puzzle game themed around love. The objective is for players to control their halves using separate controls, bringing them together to form a complete heart.
 @author: Markonije
+@tags: ['puzzle']
+@addedOn: 2023-02-13
 */
 
 const player1 = "p";

@@ -1,6 +1,9 @@
 /*
 @title: sPaint!
+@description: sPaint! is a sandbox-style game where players can create designs by placing and erasing pixels on a grid.
 @author: yzde
+@tags: ['sandbox']
+@addedOn: 2023-02-02
 
 controls:
 use w (at the first screen) to start

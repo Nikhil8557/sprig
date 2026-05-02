@@ -1,23 +1,46 @@
 import { defineConfig } from 'astro/config'
 import preact from '@astrojs/preact'
-import vercel from '@astrojs/vercel/serverless'
-import prefresh from '@prefresh/vite'
+
 import svelte from '@astrojs/svelte'
 import rehypeExternalLinks from 'rehype-external-links'
+import fs from "node:fs";
+import generateMetadata from "./src/integrations/generate-metadata"
+import vercel from "@astrojs/vercel"
+const gameFiles = fs.readdirSync("games").filter(f => f.endsWith(".js")).map(game => `./games/${game}`);
 
 export default defineConfig({
 	site: 'https://sprig.hackclub.com',
+	devToolbar: { enabled: false },
 	integrations: [
 		preact({ compat: true }),
-		svelte()
+		svelte(),
+		generateMetadata()
 	],
 	output: 'server',
 	adapter: vercel(),
 	vite: {
-		plugins: [ prefresh() ],
+		css: {
+			preprocessorOptions: {
+				scss: {
+					api: 'modern'
+				}
+			}
+		},
+		server: {
+      allowedHosts: [
+				"sprig.hackclub.com",
+        "d444gocccow80c8wkgsg4sss.a.selfhosted.hackclub.com"
+      ],
+      host: true, // Allow access from non-localhost domains
+      cors: true, // Allow CORS (optional)
+    },
+		optimizeDeps: {
+			exclude: ['https']
+		},
+		plugins: [],
 		ssr: {
 			// If an import is broken in the Vercel deployment, adding it here might fix it!
-			noExternal: [ 'react-icons', 'tinykeys' ]
+			noExternal: [ 'tinykeys' ]
 		}
 	},
 	markdown: {

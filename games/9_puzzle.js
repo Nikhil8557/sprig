@@ -1,7 +1,10 @@
 /*
-
 @title: 9_puzzle
+@description: "9_puzzle" is a tile-based puzzle game where the objective is to cover pink tiles with red tiles by strategically pulling white tiles into position. Players navigate a grid and must solve each level by aligning the tiles correctly to progress.
 @author: brian
+@tags: ['puzzle']
+@addedOn: 2022-07-14
+
 
 Instructions:
 
@@ -112,7 +115,7 @@ onInput("k", _ => {
 })
 
 afterInput(_ => {
-  console.log(tilesWith(red,target));
+  // console.log(tilesWith(red,target));
 })
 
 const moveTileTo = (x,y) => {

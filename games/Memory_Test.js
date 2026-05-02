@@ -1,6 +1,9 @@
 /*
 @title: Memory_Test
+@description: "Memory Test" is a simple memory-based game where players must remember and select highlighted boxes to improve their recall and beat their previous times. The game tests players' memory skills as they move around and pick the correct tiles that light up. The level progresses as players accurately remember and select the correct boxes.
 @author: Albert_M
+@tags: ['memory']
+@addedOn: 2023-03-03
 A simple memory test. 
 Use WASD to move and L to click the tiles that light up. 
 (Code for timer inspired by "Flurffy" by Lucas )

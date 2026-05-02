@@ -1,6 +1,9 @@
 /*
 @title: sudoku
+@description: This game is a Sudoku implementation, designed with a "very-hard" default difficulty, which can be adjusted. Players can navigate the Sudoku grid, enter numbers, and solve puzzles of varying difficulty levels. The game also indicates incorrect numbers with a red border, helping players identify errors in their entries.
 @author: wyatt
+@tags: ['retro']
+@addedOn: 2023-01-25
 
 This is a sudoku implementation - difficulty is set as "very-hard" by default, but can be
 changed by editting line 39.
@@ -1143,7 +1146,7 @@ const sudokuJS = () => {
             }
         }
 
-        console.log(display_string);
+        // console.log(display_string);
     };
 
     sudoku.validate_board = function(board){

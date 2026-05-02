@@ -1,6 +1,9 @@
 /*
 @title: LUCK
+@description: LUCK is a puzzle game created by Ethan where players navigate through levels by moving boxes onto goals while avoiding walls. It challenges players to strategically push boxes in a limited space. Progressing through levels requires thoughtful planning and problem-solving skills.
 @author: Ethan
+@tags: ['puzzle']
+@addedOn: 2022-09-28
 */
 
 const player = "p";

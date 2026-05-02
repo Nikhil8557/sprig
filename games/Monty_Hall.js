@@ -1,6 +1,9 @@
 /*
 @title: Monty Hall
+@description: "Monty Hall" is a simulation game that explores the probability puzzle from the classic game show, where a player must choose between three doors, behind one is a car and behind the others, goats. The game illustrates why switching doors after one non-chosen door is revealed increases the chance of winning the car from 1/3 to 2/3. It serves as an interactive way to understand and visualize the counterintuitive probabilities involved in the Monty Hall problem.
 @author: Leonard (Omay)
+@tags: ['simulation']
+@addedOn: 2022-11-06
 
 Why switching is better:
 The door you choose has a 1/3 chance of having the car.

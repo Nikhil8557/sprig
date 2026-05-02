@@ -16,7 +16,7 @@ If this is your first time using Sprig, try playing through the [tutorial](https
 
 You can also watch this [introduction to the editor](https://www.youtube.com/watch?v=GEbDRR_cqJI) or [walkthrough](https://www.youtube.com/watch?v=1UTLS4aO9bQ) on how to make a game. From there, we suggest hacking on any of the [current games](https://sprig.hackclub.com/gallery) or starting from scratch. -->
 
-If you ever need help, have ideas, or want to meet other game-makers, join the community in the [#sprig](https://hackclub.slack.com/archives/C02UN35M7LG) channel on the [Hack Club Slack](https://hackclub.com/slack).
+If you ever need help, have ideas, or want to meet other game-makers, join the community in the [#sprig](https://hackclub.slack.com/archives/C02UN35M7LG) channel on the [Hack Club Slack](https://hackclub.com/slack). You can access this guide [here](https://github.com/hackclub/sprig/blob/main/docs/docs.md).
 
 ## Level Design
 
@@ -307,3 +307,20 @@ const tileHasType = (x, y, type) => getTile(x, y).some(s => s.type === type)
 const getTypeFromTile = (x, y, type) => getTile(x, y, type).find(s => s.type === type)
 ```
  -->
+
+## Infinite loop detection
+The Sprig editor will automatically insert a heuristic in your `for`, `while` and or `do-while` loops to detect potential infinite loops.
+Code looking like
+```js
+while (condition) {
+  // do stuff
+}
+```
+will become
+```js
+startTime = performance.now()
+while (condition) {if (++_loopIt > 2000 && performance.now() - startTime > 1500) throw new RangeError("Potential infinite loop")
+  // do stuff
+}
+```
+Note that all original line numbers in your code will be preserved.

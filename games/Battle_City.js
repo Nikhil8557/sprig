@@ -1,6 +1,9 @@
 /*
 @title: Battle_City
+@description: "Battle_City" is a modern homage to the classic NES game "Battle City," where players control a tank to shoot enemy tanks in various levels. The game challenges players to strategically navigate and eliminate enemies to progress through the levels. It features elements like destructible walls and automatic respawn to maintain an engaging combat environment.
 @author: DevIos
+@tags: []
+@addedOn: 2023-01-09
 */
 const player = "p";
 const wall = "w";

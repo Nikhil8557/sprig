@@ -1,6 +1,10 @@
 /*
 @title: offline_t-rex_game
-@author: zoya hussain */
+@description: This game is a simplified version of the Chrome offline dinosaur game where the player controls a dinosaur running endlessly. The objective is to avoid cacti obstacles by jumping over them, with the goal of achieving a high score as the speed of the game increases.
+@author: zoya hussain
+@tags: ['endless']
+@addedOn: 2022-12-31
+*/
 
 let vy = 0;
 
@@ -177,7 +181,7 @@ function gameLoop() {
 
 function lost() {
   gameOver = true;
-  console.log("You lost");
+  // console.log("You lost");
   setMap(map`
 ssssss
 ssssss

@@ -1,6 +1,9 @@
 /*
 @title: hangman
+@description: A version of hangman! Try to guess the word using as few letter guesses as possible.
 @author: PapaAlpaca
+@tags: ['retro']
+@addedOn: 2023-05-05
 Special thanks to jedgrei for the alphabet design :)
 */
 /*

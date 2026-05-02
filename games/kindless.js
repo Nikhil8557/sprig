@@ -1,6 +1,9 @@
 /*
 @title: kindless
+@description: Try to land the rocket on the landing pad across all the levels!
 @author: Ishan (@quackduck)
+@tags: []
+@addedOn: 2022-07-26
 
 This game has WASD controls, can be quite mean, and may or may not have a cheat code.
 
@@ -441,7 +444,7 @@ setInterval(() => {
     pos = getFirst(player).y;
     velocity = 0;
   }
-  console.log(pos)
+  // console.log(pos)
   if (Math.round(pos) === 13 && velocity > 0) { // ground, going down
     velocity = 0;
   }
@@ -463,7 +466,7 @@ setInterval(() => {
 // let score = 90
 setInterval(() => {
   let velocityMsg = round(-velocity*10) + " " + round(hvelocity*10);
-  console.log(-velocity, velocityMsg);
+  // console.log(-velocity, velocityMsg);
   // textWrite(9, 1, score + "");
   clearText();
   addText(velocityMsg, {y: 0, color:color`2`})

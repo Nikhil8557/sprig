@@ -1,6 +1,9 @@
 /*
 @title: floppyMatch
+@description: floppyMatch is a puzzle game where you control a pointer to match floppy disk parts by selecting top and bottom sections that align with a disk example shown at the top of the screen. You earn points for correct matches and get strikes for incorrect selections, with the goal of reaching ten points to win before accruing three strikes that reset your progress. The game also features a timer for an added challenge in beating your best time.
 @author: GBan22
+@tags: ['puzzle']
+@addedOn: 2022-10-05
 Instructions:
 
 In floppyMatch, you control a pointer that can move from left to right. A floppy disk appears at the top of the screen, and you have to match it. 
@@ -338,9 +341,9 @@ onInput("d", () => {
     if (ind > 5) {
       ind = 5
     }
-    console.log(ind)
+    // console.log(ind)
   } catch (error) {
-    console.log("ignored")
+    // console.log("ignored")
 
   }
   
@@ -377,10 +380,10 @@ onInput("a", () => {
     if (ind < 0) {
       ind = 0
     }
-    console.log(ind)
+    // console.log(ind)
 
   } catch (error) {
-    console.log("ignored a")
+    // console.log("ignored a")
 
   }
   
@@ -394,8 +397,8 @@ onInput("i", () => {
     
     chosenimes += 1
     if (chosenimes == 2) {
-      console.log(chosen)
-      console.log(onesTheyChose)
+      // console.log(chosen)
+      // console.log(onesTheyChose)
       //much more efficient way to doing this, checking if lisrts are equal has more edge case detetion with larger lists, but can jnust check if for each ithing in lis tif it exists on the other, nette rthan this big ifc loop
       if ((chosen[0] === onesTheyChose[0] && chosen[1] === onesTheyChose[1]) || (chosen[1] === onesTheyChose[0] && chosen[0] === onesTheyChose[1])) {
         playTune(right)
@@ -416,7 +419,7 @@ onInput("i", () => {
         
       }
       else {
-        console.log("rip")
+        // console.log("rip")
 
         wrongs += 1
         totalMess += 1

@@ -1,6 +1,9 @@
 /*
 @title: DVD logo Simulator
+@description: The "DVD Logo Simulator" is an endless simulation game where you watch a DVD logo bounce around the screen, aiming to hit the corners. Each corner hit results in a color change for the logo.
 @author: the456gamer
+@tags: ['endless','simulation']
+@addedOn: 2022-12-18
 
 hit run, enjoy.
 J -> restart from random position

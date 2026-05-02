@@ -1,6 +1,9 @@
 /*
 @title: Tron
+@description: "Tron" is a multiplayer adaptation of the classic light cycle game, featuring two players competing to outmaneuver each other by leaving trails that their opponent must avoid. Players must navigate a grid without colliding with trails or walls, aiming to force their opponent into an error to win.
 @author: Robert Carmen
+@tags: ['multiplayer']
+@addedOn: 2022-10-30
 
 An adaptation of the classic game, Tron. Enjoy!
 v0.2
@@ -359,13 +362,13 @@ const gameLoop1 = setInterval(() => {
     addSprite(getFirst(p1u).x, getFirst(p1u).y, stream1);
     getFirst(p1u).y -= 1;
   } catch (e) {
-    console.log("nope");
+    // console.log("nope");
   }
   try {
     addSprite(getFirst(p2u).x, getFirst(p2u).y, stream2);
     getFirst(p2u).y -= 1;
   } catch (e) {
-    console.log("nope");
+    // console.log("nope");
   }
 }, updateRate);
 
@@ -374,13 +377,13 @@ const gameLoop2 = setInterval(() => {
     addSprite(getFirst(p1d).x, getFirst(p1d).y, stream1);
     getFirst(p1d).y += 1;
   } catch (e) {
-    console.log("nope");
+    // console.log("nope");
   }
   try {
     addSprite(getFirst(p2d).x, getFirst(p2d).y, stream2);
     getFirst(p2d).y += 1;
   } catch (e) {
-    console.log("nope");
+    // console.log("nope");
   }
 }, updateRate);
 
@@ -389,13 +392,13 @@ const gameLoop3 = setInterval(() => {
     addSprite(getFirst(p1r).x, getFirst(p1r).y, stream1);
     getFirst(p1r).x += 1;
   } catch (e) {
-    console.log("nope");
+    // console.log("nope");
   }
   try {
     addSprite(getFirst(p2r).x, getFirst(p2r).y, stream2);
     getFirst(p2r).x += 1;
   } catch (e) {
-    console.log("nope");
+    // console.log("nope");
   }
 }, updateRate);
 
@@ -404,13 +407,13 @@ const gameLoop4 = setInterval(() => {
     addSprite(getFirst(p1l).x, getFirst(p1l).y, stream1);
     getFirst(p1l).x -= 1;
   } catch (e) {
-    console.log("nope");
+    // console.log("nope");
   }
   try {
     addSprite(getFirst(p2l).x, getFirst(p2l).y, stream2);
     getFirst(p2l).x -= 1;
   } catch (e) {
-    console.log("nope");
+    // console.log("nope");
   }
 }, updateRate);
 

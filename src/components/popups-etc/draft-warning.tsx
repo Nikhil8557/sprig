@@ -1,5 +1,6 @@
 import type { Signal } from '@preact/signals'
-import { persist, useAuthHelper } from '../../lib/game-saving/auth-helper'
+import { useAuthHelper } from '../../lib/game-saving/auth-helper'
+import { persist } from '../../lib/game-saving/persist'
 import { useNeedsManualMigration } from '../../lib/game-saving/legacy-migration'
 import type { PersistenceState } from '../../lib/state'
 import Button from '../design-system/button'
@@ -71,11 +72,12 @@ export default function DraftWarningModal(props: DraftWarningModalProps) {
 
 						<div class={`${styles.inputRow} ${styles.limited}`}>
 							<Input maxLength={6} class={styles.center} type='text' bind={auth.code} placeholder='123456' />
-							<Button accent type='submit' disabled={!auth.codeValid.value} loading={auth.isLoading.value}>
+							<Button accent type='submit' disabled={!auth.codeValid.value || auth.state.value === 'ACCOUNT_LOCKED'} loading={auth.isLoading.value}>
 								Log in
 							</Button>
 						</div>
 						{auth.state.value === 'CODE_INCORRECT' && <p class={styles.error}>Incorrect login code.</p>}
+						{auth.state.value === 'ACCOUNT_LOCKED' && <p class={styles.error}>Account locked due to too many failed attempts. Please try again in {+import.meta.env.PUBLIC_LOCKOUT_DURATION_MS / 60000} minutes.</p>}
 					</form>
 
 					<p class={styles.muted}>

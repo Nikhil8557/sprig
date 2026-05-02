@@ -1,6 +1,9 @@
 /*
 @title: Avoid_The_Tree
+@description: "Avoid the Tree" is an endless game where players control a bird flying through a forest, aiming to avoid crashing into trees. The goal is to achieve the highest possible score by navigating as far as possible without collisions.
 @author: Samarth Verulkar
+@tags: ['endless']
+@addedOn: 2023-01-05
 
 References and inspirations:
 Coding Demo 5: Gravity by Leonard (Omay)
@@ -182,7 +185,7 @@ function gameLoop() {
 
 function lost() {
   gameOver = true;
-  console.log("You lost");
+  // console.log("You lost");
   setMap(map`
 ssssss
 ssssss

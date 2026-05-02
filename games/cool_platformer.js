@@ -1,6 +1,9 @@
 /*
 @title: cool_platformer
+@description: "Cool Platformer" is a strategy-based platformer where players navigate through levels by moving boxes and collecting coins to reach the end goal.
 @author: Aiden/Roizor
+@tags: ['strategy']
+@addedOn: 2022-11-12
 */
 
 const player = "p";
